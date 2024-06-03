@@ -15,7 +15,7 @@ body{
     display: flex;
     
 }
-.Form-Data{
+.form{
     border: 2px solid grey;
     border-radius: 10px 10px 0px 0px;
     padding: 10px;

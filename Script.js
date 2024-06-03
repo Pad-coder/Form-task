@@ -5,38 +5,44 @@ form.setAttribute("class", "Form")
 
 Root.appendChild(form);
 
-form.innerHTML = `<h2>Form:</h2>
+form.innerHTML = `<h1 id="title">Form:</h1>
+<p id = "description">Digital form to get user data<p>
 <div class="Form-container">
-<form id= "Form-data" class="Form-Data">
+<form id= "form" class="Form-Data">
 
 <div class="First-name">
 <label for="first-name">First Name:</label>
-<input id="input-First-Name" type="text" required="">
+<input id="first-name" type="text" placeholder="First name">
 </div>
 
 <div class="Last-name">
 <label for="Last-name">Last Name:</label>
-<input id="input-Last-Name" type="text" required="">
+<input id="last-name" type="text" required="" placeholder="Last name">
 </div>
 
 <div class="Address">
 <label for="Address">Address:</label>
-<input id="input-Address" type="text" required="">
+<input id="address" type="text" required="" placeholder="Address">
 </div>
 
 <div class="Ph.Number">
 <label for="Ph.Number">Ph.Number:</label>
-<input id="input-Ph.Number" type="text" required="">
+<input id="input-Ph.Number" type="text" required="" placeholder="Phone number">
+</div>
+
+<div class="Email">
+<label for="EMAIL">Email:</label>
+<input id="email" type="text" required="" placeholder="Email">
 </div>
 
 <div class="Pin-code">
 <label for="Pin-Code">Pincode:</label>
-<input id="input-Pin-Code" type="text" required="">
+<input id="pincode" type="text" required="" placeholder="Pincode">
 </div>
 
-<div class="Gender">
-<label for="Gender">Gender:</label>
-<select id="Gender" class:"Gender-Scroll">
+<div class="Gender" id="gender">
+<label for="Gender" id="gender">Gender:</label>
+<select id="gender" class:"Gender-Scroll" >
     <option value="Male">Male</option>
     <option value="Female">Female</option>
     <option value="Others">Others</option>
@@ -61,16 +67,16 @@ form.innerHTML = `<h2>Form:</h2>
 
 <div class="State">
 <label for="State">State:</label>
-<input id="input-State" type="text" required="">
+<input id="input-State" type="text" required="" placeholder="State">
 </div>
 
 <div class="Country">
 <label for="Country">Country:</label>
-<input id="input-Country" type="text" required="">
+<input id="input-Country" type="text" required="" placeholder="Country">
 </div>
 
 <div class="Submit">
-<button id="BTN-Submit" class="BTN-Submit"type="button">Submit</button>
+<button id="BTN-Submit" class="BTN-Submit" type="button" value="Click me">Submit</button>
 </div>
 </form>
 
@@ -94,7 +100,7 @@ form.innerHTML = `<h2>Form:</h2>
     </tr>
     <tbody id="Table-Body" class="Table-Body">
         <tr>
-            <th>1</th>
+            <th id="F-Name"></th>
             <th>2</th>
             <th>3</th>
             <th>4</th>
@@ -111,3 +117,14 @@ form.innerHTML = `<h2>Form:</h2>
 </div>`;
 
 Root.appendChild(heading);
+
+
+let fName= document.getElementById("first-name");
+let Button= document.getElementById("BTN-Submit");
+let Th1= document.getElementById("F-Name");
+
+function fun1() {
+    Th1.innerHTML= fName.value;
+}
+
+Button.addEventListener('click', fun1);
